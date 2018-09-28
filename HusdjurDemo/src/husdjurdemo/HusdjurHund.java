@@ -16,13 +16,13 @@ public class HusdjurHund extends Husdjurshotell{
 
     @Override
     public double portion() {
-        return super.getVikt() * 1000 / 100;        
+        return Math.round(super.getVikt() * 1000 / 100) ;        
     }
     
     @Override
     public String getInfo(){
         return "Hundens" + super.getInfo() +
-                "\nEat " + this.portion() + "gram " + this.MAT;
+                "\nEat:  " + this.portion() + "(gram) " + this.MAT;
     }
     
 }

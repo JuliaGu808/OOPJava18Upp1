@@ -23,7 +23,7 @@ public class HusdjurOrm extends Husdjurshotell{
     @Override
     public String getInfo(){
         return "Ormens" + super.getInfo() +
-                "\nEat " + this.portion() + "gram " + this.MAT;
+                "\nEat:  " + this.portion() + "(gram) " + this.MAT;
     }
     
 }

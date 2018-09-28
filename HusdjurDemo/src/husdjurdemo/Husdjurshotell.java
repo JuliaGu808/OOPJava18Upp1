@@ -21,11 +21,11 @@ public abstract class Husdjurshotell implements IHusdjur{
     
     @Override
     public String getInfo(){
-        return " name: " + this.name + ", vikt: " + this.vikt + "kg";
+        return " name:  " + this.name + "\nVikt:  " + this.vikt + "(kg)";
     }
 
     public boolean match(String str){
-        if(this.name.equals(str))
+        if(this.name.equalsIgnoreCase(str))
             return true;   
         return false;
     }
