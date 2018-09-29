@@ -31,7 +31,34 @@ public class HusdjurDemo {
             JOptionPane.showMessageDialog(null, "No matches.");            
     }
     
+    public static void searchP(){
+         Personal[] human = new Personal[5];
+         human[0] = new HusdjurServer("David", 1001);
+         human[1] = new HusdjurServer("Mary", 1002);
+         human[2] = new HusdjurKund("Cindy", 9001);
+         human[3] = new HusdjurKund("Tom", 9002);
+         human[4] = new HusdjurKund("Olive", 9003); 
+         
+         Husdjurshotell person = null;
+         
+         String s = JOptionPane.showInputDialog("Persons name ?");
+        if(s == null || s.trim().equals(""))
+            System.exit(0);
+        for(int i=0; i<5; i++){
+            person = (Husdjurshotell) human[i];
+            if(person.match(s)){
+                JOptionPane.showMessageDialog(null, person.getInfo());
+                break;
+            }            
+        }
+        if(person.match(s)==false)
+            JOptionPane.showMessageDialog(null, "No matches.");  
+    }
+    
     public static void main(String[] args) {
       HusdjurDemo pet = new HusdjurDemo();
+      searchP();
     }
 }
+
+// next List , seperate pet ang person system

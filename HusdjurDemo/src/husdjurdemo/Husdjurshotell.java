@@ -8,16 +8,14 @@ package husdjurdemo;
  * @author Julia
  */
 public abstract class Husdjurshotell{
-    private String name;
-    private double vikt;
+    protected String name;
     
-    public Husdjurshotell(String name, double vikt){
+    public Husdjurshotell(String name){
         this.name=name;
-        this.vikt=vikt;
     }
     
     public String getInfo(){
-        return " name:  " + this.name + "\nVikt:  " + this.vikt + "(kg)";
+        return " name:  " + this.name;
     }
 
     public boolean match(String str){
@@ -32,14 +30,6 @@ public abstract class Husdjurshotell{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getVikt() {
-        return vikt;
-    }
-
-    public void setVikt(double vikt) {
-        this.vikt = vikt;
     }
     
 }

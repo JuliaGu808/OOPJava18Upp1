@@ -8,11 +8,13 @@ package husdjurdemo;
  * @author Julia
  */
 public class HusdjurOrm extends Husdjurshotell implements IHusdjur{
+    protected double vikt;
     public static final String MAT = "ormpellets";
 
 
     public HusdjurOrm(String name, double vikt) {
-        super(name, vikt);
+        super(name);
+        this.vikt=vikt;
     }
 
     @Override
@@ -22,8 +24,16 @@ public class HusdjurOrm extends Husdjurshotell implements IHusdjur{
  
     @Override
     public String getInfo(){
-        return "Ormens" + super.getInfo() +
-                "\nEat:  " + this.portion() + "(gram) " + this.MAT;
+        return "Ormens" + super.getInfo() + "\nVikt:  " + this.vikt + "(kg)"
+                + "\nEat:  " + this.portion() + "(gram) " + this.MAT;
+    }
+    
+    public double getVikt() {
+        return vikt;
+    }
+
+    public void setVikt(double vikt) {
+        this.vikt = vikt;
     }
     
 }
