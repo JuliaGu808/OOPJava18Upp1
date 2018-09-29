@@ -7,7 +7,7 @@ package husdjurdemo;
  *
  * @author Julia
  */
-public class HusdjurKatt extends Husdjurshotell{
+public class HusdjurKatt extends Husdjurshotell implements IHusdjur{
     public static final String MAT = "kattfoder";
     
 

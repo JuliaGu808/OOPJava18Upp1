@@ -15,19 +15,19 @@ public class HusdjurDemo {
         p[3] = new HusdjurKatt("Ove", 3);
         p[4] = new HusdjurOrm("Hypno", 1);
         
-        Husdjurshotell h1 = null;
+        Husdjurshotell husdjur = null;
         
         String s = JOptionPane.showInputDialog("Djurs name ?");
         if(s == null || s.trim().equals(""))
             System.exit(0);
         for(int i=0; i<5; i++){
-            h1 = (Husdjurshotell) p[i];
-            if(h1.match(s)){
-                JOptionPane.showMessageDialog(null, h1.getInfo());
+            husdjur = (Husdjurshotell) p[i];
+            if(husdjur.match(s)){
+                JOptionPane.showMessageDialog(null, husdjur.getInfo());
                 break;
             }            
         }
-        if(h1.match(s)==false)
+        if(husdjur.match(s)==false)
             JOptionPane.showMessageDialog(null, "No matches.");            
     }
     

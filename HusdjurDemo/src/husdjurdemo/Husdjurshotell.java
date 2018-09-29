@@ -7,7 +7,7 @@ package husdjurdemo;
  *
  * @author Julia
  */
-public abstract class Husdjurshotell implements IHusdjur{
+public abstract class Husdjurshotell{
     private String name;
     private double vikt;
     
@@ -16,10 +16,10 @@ public abstract class Husdjurshotell implements IHusdjur{
         this.vikt=vikt;
     }
 
-    @Override
-    public abstract double portion();
+//    @Override
+//    public abstract double portion();
     
-    @Override
+    
     public String getInfo(){
         return " name:  " + this.name + "\nVikt:  " + this.vikt + "(kg)";
     }

@@ -11,5 +11,4 @@ public interface IHusdjur {
     
     public double portion();
     
-    public String getInfo();
 }
