@@ -15,10 +15,6 @@ public abstract class Husdjurshotell{
         this.name=name;
         this.vikt=vikt;
     }
-
-//    @Override
-//    public abstract double portion();
-    
     
     public String getInfo(){
         return " name:  " + this.name + "\nVikt:  " + this.vikt + "(kg)";
