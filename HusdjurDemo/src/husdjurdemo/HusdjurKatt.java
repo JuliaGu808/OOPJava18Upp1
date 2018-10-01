@@ -7,14 +7,12 @@ package husdjurdemo;
  *
  * @author Julia
  */
-public class HusdjurKatt extends Husdjurshotell implements IHusdjur{
-    protected double vikt;
+public class HusdjurKatt extends Husdjur{
     public static final String MAT = "kattfoder";
     
 
     public HusdjurKatt(String name, double vikt) {
-        super(name);
-        this.vikt=vikt;
+        super(name, vikt);
     }
 
     @Override
@@ -24,15 +22,8 @@ public class HusdjurKatt extends Husdjurshotell implements IHusdjur{
     
     @Override
     public String getInfo(){
-        return "Kattens" + super.getInfo() + this.vikt + "(kg)"
+        return "Kattens" + super.getInfo() + "\nVikt: " + super.getVikt() + "(kg)"
                + "\nEat:  " + this.portion() + "(gram) " + this.MAT;
     }    
-    
-    public double getVikt() {
-        return vikt;
-    }
 
-    public void setVikt(double vikt) {
-        this.vikt = vikt;
-    }
 }

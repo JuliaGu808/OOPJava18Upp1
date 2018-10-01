@@ -7,8 +7,10 @@ package husdjurdemo;
  *
  * @author Julia
  */
-public abstract class Husdjurshotell{
+public class Husdjurshotell{
     protected String name;
+    
+    public Husdjurshotell(){}
     
     public Husdjurshotell(String name){
         this.name=name;

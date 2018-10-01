@@ -4,38 +4,38 @@
 
 package husdjurdemo;
 import javax.swing.*;
+import java.util.*;
 
 
 public class HusdjurDemo {
-    public HusdjurDemo(){
-        IHusdjur[] p = new IHusdjur[5];
-        p[0] = new HusdjurHund("Sixten", 5);
-        p[1] = new HusdjurHund("Dogge", 10);
-        p[2] = new HusdjurKatt("Venus", 5);
-        p[3] = new HusdjurKatt("Ove", 3);
-        p[4] = new HusdjurOrm("Hypno", 1);
+    public HusdjurDemo(){        
         
-        Husdjurshotell husdjur = null;
-        
-        String s = JOptionPane.showInputDialog("Djurs name ?");
-        if(s == null || s.trim().equals(""))
+        Husdjur djur = new Husdjur();
+       
+        djur.addHund(new HusdjurHund("Sixten", 5));
+        djur.addHund(new HusdjurHund("Dogge", 5));
+        djur.addKatt(new HusdjurKatt("Venus", 5));
+        djur.addKatt(new HusdjurKatt("Ove", 3));
+        djur.addOrm(new HusdjurOrm("Hypno", 1));
+        // to add extra husdjur
+        djur.addOrm(new HusdjurOrm("Nikolas", 1.5));
+        djur.addHund(new HusdjurHund("Muffin", 6.5));
+        djur.addKatt(new HusdjurKatt("Cindy", 4.5));
+        djur.addOrm(new HusdjurOrm("Banto", 1.5));
+           
+        String test = JOptionPane.showInputDialog("Djurs name ?");
+        if(test == null || test.trim().equals(""))
             System.exit(0);
-        for(int i=0; i<5; i++){
-            husdjur = (Husdjurshotell) p[i];
-            if(husdjur.match(s)){
-                JOptionPane.showMessageDialog(null, husdjur.getInfo());
-                break;
-            }            
+        else
+            JOptionPane.showMessageDialog(null, djur.containsDjur(test));
         }
-        if(husdjur.match(s)==false)
-            JOptionPane.showMessageDialog(null, "No matches.");            
-    }
-    
+ 
+    // to add extra class for search person
     public static void searchP(){
          Personal[] human = new Personal[5];
          human[0] = new HusdjurServer("David", 1001);
          human[1] = new HusdjurServer("Mary", 1002);
-         human[2] = new HusdjurKund("Cindy", 9001);
+         human[2] = new HusdjurKund("Emma", 9001);
          human[3] = new HusdjurKund("Tom", 9002);
          human[4] = new HusdjurKund("Olive", 9003); 
          
@@ -61,4 +61,4 @@ public class HusdjurDemo {
     }
 }
 
-// next List , seperate pet ang person system
+
