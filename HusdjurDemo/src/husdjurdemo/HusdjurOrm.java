@@ -7,7 +7,7 @@ package husdjurdemo;
  *
  * @author Julia
  */
-public class HusdjurOrm extends Husdjur{
+public final class HusdjurOrm extends Husdjur{
     public static final String MAT = "ormpellets";
 
 

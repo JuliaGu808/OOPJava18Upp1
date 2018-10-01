@@ -17,7 +17,7 @@ public class HusdjurKund extends Husdjurshotell implements Personal{
 
     @Override
     public String roles() {
-        return "Husdjurshotells kund, ";
+        return " Husdjurshotells kund\n";
     }
 
     public int getKundNr() {
@@ -31,7 +31,7 @@ public class HusdjurKund extends Husdjurshotell implements Personal{
     @Override
     public String getInfo(){
         return  this.roles() + super.getInfo() +
-                "\nKunds nummer: " + this.getKundNr();
+                "\n kunds nummer: " + this.getKundNr();
     }
     
 }

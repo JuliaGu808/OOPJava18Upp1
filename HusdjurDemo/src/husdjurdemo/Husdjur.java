@@ -5,31 +5,40 @@ package husdjurdemo;
 import java.util.*;
 
 /**
- *
+ *class extends Husdjurshotell and implements interface IHusdjur
  * @author Julia
  */
 public class Husdjur extends Husdjurshotell implements IHusdjur{
-    private double vikt;
-    
+    protected double vikt;    // pets unik character 
+    // use ArrayList for different kinds of pets and can let add action more easy
     protected List<HusdjurHund> hund = new ArrayList<>();
     protected List<HusdjurKatt> katt = new ArrayList<>();
     protected List<HusdjurOrm> orm = new ArrayList<>();
-    
+    /**
+     * default constructor which can help create an object easily
+     */
     public Husdjur(){}
-    
+    /**
+     * a defined constructor which can help add pets information
+     * @param name
+     * @param vikt 
+     */
     public Husdjur(String name, double vikt){
         super(name);
         this.vikt=vikt;
     }
-
+    //getter
     public double getVikt() {
         return vikt;
     }
-   
+    // setter
     public void setVikt(double vikt) {
         this.vikt = vikt;
     }
-    
+    /**
+     * method which can get use of ArrayLists add method
+     * @param h an object, like dog, cat and snake
+     */
     public void addHund(HusdjurHund h){
         hund.add(h);
     }
@@ -43,7 +52,15 @@ public class Husdjur extends Husdjurshotell implements IHusdjur{
     public void addOrm(HusdjurOrm o){
         orm.add(o);
     }
-    
+    /**
+     * method to compare with the parameter to find the exact pets information
+     * in the method, use the super class match method
+     * write the same method structure for different pets an protected method
+     * 
+     * @param str pets name
+     * @return pets information
+     * use another method to call these three method
+     */
     protected String matchHund(String str){
         String s = "No matches";
         for(HusdjurHund h: hund){
@@ -73,7 +90,11 @@ public class Husdjur extends Husdjurshotell implements IHusdjur{
         }
         return s;
     }
-
+    /**
+     * method to call three pets match method 
+     * @param name pets name
+     * @return the right ones information
+     */
     public String containsDjur(String name){
         String s = "No matches";
         s = matchHund(name);
@@ -84,7 +105,12 @@ public class Husdjur extends Husdjurshotell implements IHusdjur{
         return s;
     }
     
-
+    /**
+     * method from interface IHusdjur
+     * @return 0
+     * nothing because this method need its subclass to override it
+     * and write theirs unik code
+     */
     @Override
     public double portion(){
         return 0;
