@@ -9,17 +9,19 @@ import java.util.*;
  * @author Julia
  */
 public class Husdjurshotell {
-    List<Husdjur> djur = new ArrayList<>(); // create a list
+    List<IDjur> djur = new ArrayList<>();
+    
     /**
      * method add each pets
      * get use of the list method add
-     * @param husdjur a super class which has three subclasses
+     * @param husdjur an interface classes object which implemented 
+     * by a super class which has three subclasses
      */
-    public void addDjur(Husdjur husdjur){
+    public void addDjur(IDjur husdjur){
         djur.add(husdjur);
     }
     
-    public List<Husdjur> getDjur(){
+    public List<IDjur> getDjur(){
         return djur;
     }
     /**
@@ -31,9 +33,10 @@ public class Husdjurshotell {
      */
     public String matchInfo(String str){
         String s = "No matches";
-        for(Husdjur h: djur){
-            if(h.getName().equalsIgnoreCase(str))
-                s = h.getInfo();
+        for(IDjur h: djur){
+            Husdjur pets = (Husdjur)h;  // change interface pets to the superclass
+            if(pets.getName().equalsIgnoreCase(str))
+                s = pets.getInfo();
         }
         return s;
     }

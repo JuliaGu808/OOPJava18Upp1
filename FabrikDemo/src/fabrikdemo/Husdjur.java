@@ -11,15 +11,17 @@ public abstract class Husdjur implements IDjur{
 
     protected enum Mat{
         HUND("hundfoder"), KATT("kattfoder"), ORM("ormfoder");
-        public final String djurmat;
+        private String djurmat;
         Mat(String str){
             djurmat=str;
+        }
+        String getMat(){
+            return djurmat;
         }
     }
     private String name;
     private double vikt;
     
-    protected String hundMat = Mat.HUND.djurmat;
     protected String kattMat = Mat.KATT.djurmat;
     protected String ormMat = Mat.ORM.djurmat;
     

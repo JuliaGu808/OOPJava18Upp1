@@ -2,13 +2,15 @@
  * Java
  */
 package fabrikdemo;
+import fabrikdemo.Husdjur.Mat;
+
 
 /**
  *the subclass about dog
  * @author Julia
  */
 public class HusdjurHund extends Husdjur{
-    protected String mat = super.hundMat;
+    protected String mat = Mat.HUND.getMat();
     
     public HusdjurHund(String name, double vikt){
         super(name, vikt);      
